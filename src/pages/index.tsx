@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { CharacterCounter } from '@src/components/organisms/CharacterCounter';
 import { ShowData } from '@src/components/molecules/ShowData';
 import { useColorMode } from '@chakra-ui/color-mode';
-import { Heading } from '@chakra-ui/layout';
+import { Heading, Box } from '@chakra-ui/layout';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { IconButton } from '@chakra-ui/button';
 
@@ -21,13 +21,13 @@ export default function Home() {
         </IconButton>
 
         <hr />
-        <section>
+        <Box m={[2, 3]}>
           <h1>study recoil</h1>
           <p>with next js</p>
           <br />
           <CharacterCounter />
           <ShowData />
-        </section>
+        </Box>
       </main>
     </div>
   );
