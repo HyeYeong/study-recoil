@@ -3,6 +3,7 @@ import GlobalStyle from '@src/styles/globalStyle';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { RecoilRoot } from 'recoil';
 import { ChakraProvider } from '@chakra-ui/react';
+import theme from '@src/styles/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();
@@ -10,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
           <GlobalStyle />
           <Component {...pageProps} />
         </ChakraProvider>
