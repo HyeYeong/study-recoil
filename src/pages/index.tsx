@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { CharacterCounter } from '@src/components/organisms/CharacterCounter';
 import { ShowData } from '@src/components/molecules/ShowData';
 import { useColorMode } from '@chakra-ui/color-mode';
-import { Heading, Box, Center, AbsoluteCenter, Container, Flex, Spacer, Grid } from '@chakra-ui/layout';
+import { Heading, Box, Center, AbsoluteCenter, Container, Flex, Spacer, Grid, GridItem } from '@chakra-ui/layout';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { IconButton } from '@chakra-ui/button';
 
@@ -57,6 +57,26 @@ export default function Home() {
             <Box w='70px' h='10' bg='blue.500' />
             <Box w='170px' h='10' bg='blue.500' />
             <Box w='180px' h='10' bg='blue.500' />
+          </Grid>
+          <p>Template columns</p>
+          <Grid templateColumns='repeat(5, 1fr)' gap={6}>
+            <GridItem w='100%' h='10' bg='blue.500' />
+            <GridItem w='100%' h='10' bg='blue.500' />
+            <GridItem w='100%' h='10' bg='blue.500' />
+            <GridItem w='100%' h='10' bg='blue.500' />
+            <GridItem w='100%' h='10' bg='blue.500' />
+          </Grid>
+          <p>Spanning columns</p>
+          <Grid
+            h='200px'
+            templateRows='repeat(2, 1fr)'
+            templateColumns='repeat(5, 1fr)'
+            gap={4}
+          >
+            <GridItem rowSpan={2} colSpan={1} bg='tomato' />
+            <GridItem colSpan={2} bg='papayawhip' />
+            <GridItem colSpan={2} bg='papayawhip' />
+            <GridItem colSpan={4} bg='tomato' />
           </Grid>
         </Container>
       </main>
